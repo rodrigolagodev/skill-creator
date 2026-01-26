@@ -283,14 +283,13 @@ Open an issue with:
 
 See [CHANGELOG.md](CHANGELOG.md) for version history.
 
-### Version 1.0.0 (Current)
+### Version 1.1.0 (Current)
 
-**Initial Release:**
-- SKILL.md with core functionality
-- 3 reference documents (anatomy, frontmatter, validation)
-- 1 template (minimal-skill.md)
-- 1 workflow (create-new-skill.md)
-- README, LICENSE, CHANGELOG
+**Added:**
+- Interactive creation workflow with 8-phase guided wizard
+
+**Fixed:**
+- Corrected skill name in frontmatter (`creating-skills` → `skill-creator`)
 
 **Philosophy:**
 Skills are **pure documentation** for LLM context, not executable software.

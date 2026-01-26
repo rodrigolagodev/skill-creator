@@ -36,6 +36,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - ⚡ Automatic Mode (for experienced users)
 - **README.md** - Updated to reflect new workflow options
 
+### Fixed
+
+- **Corrected skill name in frontmatter** - Changed `name:` from `creating-skills` to `skill-creator` to match the folder name and follow Agent Skills standard naming conventions
+
 ### Philosophy
 
 When user says "crear skill" or "create a skill" without details, prefer **Interactive Mode** to gather requirements step by step.

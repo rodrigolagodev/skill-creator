@@ -1,5 +1,5 @@
 ---
-name: creating-skills
+name: skill-creator
 description: Expert guidance for creating, structuring, and refining Agent Skills following the open standard. Use when working with skill files, authoring new skills, improving existing skills, or understanding skill architecture and best practices. Use PROACTIVELY when user mentions creating skills, structuring documentation, or building reusable agent capabilities.
 license: MIT
 compatibility: agent-skills-standard
@@ -455,7 +455,10 @@ A well-structured skill:
 | Workflow | Purpose | When to Use |
 |----------|---------|-------------|
 | [interactive-creation.md](workflows/interactive-creation.md) | 🧙 Guided wizard with prompts | User says "crear skill" without details |
-| [create-new-skill.md](workflows/create-new-skill.md) | ⚡ Automatic creation | User provides full description upfront |
+| [create-new-skill.md](workflows/create-new-skill.md) | ⚡ Quick-start guide (index) | User provides full description upfront |
+| [skill-discovery-planning.md](workflows/skill-discovery-planning.md) | Phases 1-2: Discovery and Planning | Define purpose and structure |
+| [skill-implementation.md](workflows/skill-implementation.md) | Phase 3: Implementation | Create files and content |
+| [skill-validation-publishing.md](workflows/skill-validation-publishing.md) | Phases 4-6: Validation, Testing, Publishing | Verify and share |
 
 ## Philosophy
 
