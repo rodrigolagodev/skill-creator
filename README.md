@@ -1,6 +1,6 @@
 # Skill Creator
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Agent Skills](https://img.shields.io/badge/standard-Agent%20Skills-orange.svg)](https://agentskills.io)
 
@@ -93,18 +93,23 @@ tools:
 
 ### 2. Create Your First Skill
 
-Ask your assistant:
+**Option A: Interactive Mode** (Recommended for beginners)
 
 ```
-Create a skill for reviewing API documentation
+User: "Quiero crear un skill"
+Agent: "¡Vamos paso a paso! ¿Qué problema quieres resolver?"
+User: "Analizar código Python para errores"
+Agent: "Perfecto. ¿Cómo se llamará? Sugiero: python-analyzer..."
 ```
 
-The assistant will:
-1. Load this skill for guidance
-2. Read the template from `templates/minimal-skill.md`
-3. Create `~/.config/opencode/skills/api-reviewer/SKILL.md`
-4. Validate against the checklist
-5. Explain how to use it
+The agent guides you through 8 phases with questions and confirmations.
+
+**Option B: Automatic Mode** (For experienced users)
+
+```
+User: "Create a skill for reviewing API documentation"
+Agent: [Creates skill immediately based on description]
+```
 
 ### 3. Use Your Skill
 
@@ -130,7 +135,8 @@ skill-creator/
 │   └── minimal-skill.md          # Basic template with TODOs
 │
 └── workflows/                    # Step-by-step guides
-    └── create-new-skill.md       # Complete creation workflow
+    ├── interactive-creation.md   # 🧙 Guided wizard (ask questions)
+    └── create-new-skill.md       # ⚡ Automatic creation
 ```
 
 ---

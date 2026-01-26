@@ -5,7 +5,7 @@ license: MIT
 compatibility: agent-skills-standard
 metadata:
   category: skill-development
-  version: "1.0.0"
+  version: "1.1.0"
   author: "Rodrigo Lago"
   standard: "https://agentskills.io"
 ---
@@ -83,21 +83,49 @@ Write skills in **English** for optimal LLM performance:
 
 **What would you like to do?**
 
-1. **Create new skill** → Use workflow: [create-new-skill.md](workflows/create-new-skill.md)
-2. **Validate existing skill** → Use checklist: [validation-checklist.md](references/validation-checklist.md)
-3. **Understand structure** → Read: [skill-anatomy.md](references/skill-anatomy.md)
-4. **Copy template** → Start with: [templates/minimal-skill.md](templates/minimal-skill.md)
+### Creating a New Skill
 
-> **Important:** This skill provides **knowledge and templates**. When creating skills, 
-> use the `Write` tool to create files directly in `~/.config/opencode/skills/<name>/`.
+Choose your preferred mode:
 
-**Example Workflow:**
+| Mode | Workflow | Best For |
+|------|----------|----------|
+| **🧙 Interactive** | [interactive-creation.md](workflows/interactive-creation.md) | First-time creators, complex skills, when unsure |
+| **⚡ Automatic** | [create-new-skill.md](workflows/create-new-skill.md) | Experienced users, quick creation, clear requirements |
+
+**Interactive Mode** (Recommended for new users):
 ```
-User: "Create a skill for analyzing API documentation"
+User: "Quiero crear un skill"
+Agent: "¡Vamos paso a paso! ¿Qué problema quieres resolver?"
+User: "Analizar código Python"
+Agent: "Perfecto. ¿Cómo se llamará? Sugiero: python-analyzer..."
+... (continues with guided questions)
+```
+
+**Automatic Mode** (For experienced users):
+```
+User: "Create a skill for analyzing Python code for errors"
+Agent: [Creates skill immediately based on description]
+```
+
+### Other Actions
+
+- **Validate existing skill** → Use checklist: [validation-checklist.md](references/validation-checklist.md)
+- **Understand structure** → Read: [skill-anatomy.md](references/skill-anatomy.md)
+- **Copy template** → Start with: [templates/minimal-skill.md](templates/minimal-skill.md)
+
+> **Tip:** When user says "crear skill" or "create a skill" without details, 
+> prefer **Interactive Mode** to gather requirements step by step.
+
+**Example - Interactive Flow:**
+```
+User: "Quiero crear un skill"
     ↓
-1. Agent loads skill-creator for guidance
-2. Agent reads templates/minimal-skill.md
-3. Agent customizes for API analysis use case
+1. Agent loads skill-creator
+2. Agent follows workflows/interactive-creation.md
+3. Agent asks: "¿Qué problema resuelve?"
+4. User responds, agent confirms
+5. Agent asks: "¿Cómo se llamará?"
+... (8 phases of guided creation)
 4. Agent uses Write tool to create ~/.config/opencode/skills/api-analyzer/SKILL.md
 5. Done! Skill is ready to use
 ```
@@ -373,17 +401,27 @@ When creating a skill, use the `Write` tool:
 
 ### Guided Workflow
 
-Follow [workflows/create-new-skill.md](workflows/create-new-skill.md) for step-by-step guidance.
+**Two modes available:**
 
-**Steps:**
-1. **Define purpose** - What problem does it solve?
-2. **Choose template** - Start with minimal-skill.md
-3. **Customize frontmatter** - Name, description, metadata
-4. **Write instructions** - Core capabilities and guidelines
-5. **Add examples** - Show real usage patterns
-6. **Validate** - Use checklist
-7. **Test** - Try with real agent tasks
-8. **Iterate** - Refine based on usage
+**🧙 Interactive Mode** - [workflows/interactive-creation.md](workflows/interactive-creation.md)
+- Ask questions one at a time
+- Wait for user responses
+- Confirm understanding at each step
+- Best for: first-time creators, complex skills
+
+**⚡ Automatic Mode** - [workflows/create-new-skill.md](workflows/create-new-skill.md)
+- Create skill from initial description
+- No back-and-forth questions
+- Best for: experienced users, clear requirements
+
+**Decision Guide:**
+```
+User says: "Quiero crear un skill" (no details)
+→ Use Interactive Mode
+
+User says: "Create a skill for X that does Y and Z"
+→ Use Automatic Mode
+```
 
 ## Success Criteria
 
@@ -414,9 +452,10 @@ A well-structured skill:
 
 ## Workflows
 
-| Workflow | Purpose |
-|----------|---------|
-| [create-new-skill.md](workflows/create-new-skill.md) | Step-by-step creation guide |
+| Workflow | Purpose | When to Use |
+|----------|---------|-------------|
+| [interactive-creation.md](workflows/interactive-creation.md) | 🧙 Guided wizard with prompts | User says "crear skill" without details |
+| [create-new-skill.md](workflows/create-new-skill.md) | ⚡ Automatic creation | User provides full description upfront |
 
 ## Philosophy
 
@@ -445,7 +484,7 @@ This skill is open source (MIT). Contributions welcome:
 
 ---
 
-**Version:** 1.0.0  
+**Version:** 1.1.0  
 **Author:** Rodrigo Lago  
 **License:** MIT  
 **Standard:** Agent Skills (https://agentskills.io)

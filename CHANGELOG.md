@@ -11,9 +11,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Planned
 - Additional templates for specialized skill types (security, data-analysis, etc.)
-- Interactive examples demonstrating skill usage
 - Video tutorials for skill creation workflow
 - Community-contributed skill gallery
+
+---
+
+## [1.1.0] - 2026-01-25
+
+### Added
+
+- **Interactive Creation Workflow** (`workflows/interactive-creation.md`)
+  - 8-phase guided wizard for creating skills
+  - Asks one question at a time, waits for user response
+  - Confirms understanding before proceeding
+  - Supports modifications at any point
+  - Shows complete summary before creating files
+  - Language adaptation (Spanish/English)
+  - Handles edge cases (user skips ahead, unsure, changes mind)
+
+### Changed
+
+- **SKILL.md** - Updated Quick Start section with two creation modes:
+  - 🧙 Interactive Mode (recommended for new users)
+  - ⚡ Automatic Mode (for experienced users)
+- **README.md** - Updated to reflect new workflow options
+
+### Philosophy
+
+When user says "crear skill" or "create a skill" without details, prefer **Interactive Mode** to gather requirements step by step.
 
 ---
 
