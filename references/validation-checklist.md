@@ -29,22 +29,26 @@ If any critical requirement fails, **stop and fix** before continuing.
 ### 1. File Structure
 
 #### Required Files
+
 - [ ] `SKILL.md` exists in root
 - [ ] `SKILL.md` is valid markdown
 - [ ] `SKILL.md` has YAML frontmatter (between `---` markers)
 
 #### Recommended Files
+
 - [ ] `README.md` present (for GitHub)
 - [ ] `LICENSE` file present (MIT/Apache recommended)
 - [ ] `CHANGELOG.md` present (version history)
 
 #### Optional Directories
-- [ ] `references/` used if SKILL.md > 500 lines
+
+- [ ] `references/` used if SKILL.md > 650 lines
 - [ ] `templates/` included if skill generates content
 - [ ] `workflows/` included if multi-step processes exist
 - [ ] `examples/` included if concrete examples helpful
 
 #### File Naming
+
 - [ ] Skill folder name matches `name` in frontmatter
 - [ ] All files use kebab-case or camelCase consistently
 - [ ] No spaces in file/folder names
@@ -56,6 +60,7 @@ If any critical requirement fails, **stop and fix** before continuing.
 #### Required Fields
 
 **name:**
+
 - [ ] `name` field exists
 - [ ] kebab-case format (lowercase, hyphens only)
 - [ ] No spaces, underscores, or special characters
@@ -65,6 +70,7 @@ If any critical requirement fails, **stop and fix** before continuing.
 - [ ] Matches skill folder name
 
 **description:**
+
 - [ ] `description` field exists
 - [ ] Length < 1024 characters
 - [ ] Includes **WHAT** the skill does (first sentence)
@@ -77,35 +83,43 @@ If any critical requirement fails, **stop and fix** before continuing.
 #### Optional Fields
 
 **license:**
+
 - [ ] If present, valid SPDX identifier (MIT, Apache-2.0, etc.)
 - [ ] Matches LICENSE file in root (if exists)
 
 **compatibility:**
+
 - [ ] If present, valid value (agent-skills-standard, opencode, claude, etc.)
 - [ ] Accurately reflects platform support
 
 **metadata:**
+
 - [ ] If present, properly nested under `metadata:` key
 - [ ] All metadata fields valid types
 
 **metadata.category:**
+
 - [ ] If present, single category (not array)
 - [ ] Descriptive category name
 
 **metadata.version:**
+
 - [ ] If present, follows semantic versioning (1.0.0)
 - [ ] Matches version in CHANGELOG.md
 
 **metadata.author:**
+
 - [ ] If present, includes name
 - [ ] Optionally includes email/URL
 
 **metadata.tags:**
+
 - [ ] If present, array of lowercase strings
 - [ ] 3-7 tags (not too few, not too many)
 - [ ] Relevant to skill purpose
 
 **metadata.repository:**
+
 - [ ] If present, valid GitHub/GitLab URL
 
 ---
@@ -113,32 +127,37 @@ If any critical requirement fails, **stop and fix** before continuing.
 ### 3. SKILL.md Content
 
 #### Structure
+
 - [ ] Has main title (H1: `#`)
 - [ ] Has logical sections (H2: `##`)
 - [ ] Uses standard markdown headings (not XML tags)
 - [ ] No more than 3 heading levels deep (H1, H2, H3)
 
 #### Length
-- [ ] SKILL.md < 500 lines (ideal)
-- [ ] If > 500 lines, content split into references/
+
+- [ ] SKILL.md < 650 lines (ideal)
+- [ ] If > 650 lines, content split into references/
 - [ ] If > 1000 lines, **must** refactor
 
 #### Content Quality
+
 - [ ] Clear introduction (what skill does)
 - [ ] Core principles or concepts explained
 - [ ] Instructions are actionable
 - [ ] Examples demonstrate real usage
 - [ ] References linked (if applicable)
 - [ ] No broken links
-- [ ] Code blocks have language tags (```python, ```yaml)
+- [ ] Code blocks have language tags (`python, `yaml)
 
 #### Language
+
 - [ ] Entire skill in English
 - [ ] Clear, concise writing
 - [ ] No spelling errors
 - [ ] Consistent terminology
 
 #### Completeness
+
 - [ ] Explains **what** skill does
 - [ ] Explains **when** to use it
 - [ ] Explains **how** to use it
@@ -163,18 +182,21 @@ If any critical requirement fails, **stop and fix** before continuing.
 ### 5. references/ Directory (if present)
 
 #### Organization
+
 - [ ] Each file focused on one topic
 - [ ] Files use kebab-case naming
 - [ ] Clear, descriptive filenames
 - [ ] No redundant content between files
 
 #### Content
+
 - [ ] Each reference < 600 lines (ideal < 300)
 - [ ] Proper markdown structure
 - [ ] Linked from SKILL.md
 - [ ] Examples included
 
 #### Common References
+
 - [ ] Concepts explained in detail
 - [ ] API/technical specs documented
 - [ ] Anti-patterns documented (what to avoid)
@@ -185,17 +207,20 @@ If any critical requirement fails, **stop and fix** before continuing.
 ### 6. templates/ Directory (if present)
 
 #### Organization
+
 - [ ] At least 1 template provided
 - [ ] Templates use clear naming
 - [ ] Templates include TODOs or placeholders
 
 #### Content
+
 - [ ] Variables marked clearly (`{{VAR}}` or `$VAR` or `TODO`)
 - [ ] Each template < 400 lines
 - [ ] Comments explain usage
 - [ ] Examples of filled templates (optional)
 
 #### Usability
+
 - [ ] Templates are copy-paste ready
 - [ ] Clear what needs customization
 - [ ] Documented in SKILL.md
@@ -205,11 +230,13 @@ If any critical requirement fails, **stop and fix** before continuing.
 ### 7. workflows/ Directory (if present)
 
 #### Organization
+
 - [ ] Each workflow in separate file
 - [ ] Clear, descriptive filenames
 - [ ] Logical ordering of steps
 
 #### Content
+
 - [ ] Overview section (what workflow does)
 - [ ] Prerequisites listed
 - [ ] Steps numbered and clear
@@ -218,6 +245,7 @@ If any critical requirement fails, **stop and fix** before continuing.
 - [ ] Each workflow < 800 lines
 
 #### Usability
+
 - [ ] Can follow step-by-step without confusion
 - [ ] Commands are copy-pasteable
 - [ ] Verification steps included
@@ -237,6 +265,7 @@ If any critical requirement fails, **stop and fix** before continuing.
 ### 9. Quality Checks
 
 #### Documentation
+
 - [ ] All markdown files valid
 - [ ] No broken internal links
 - [ ] No broken external links (or marked as such)
@@ -244,12 +273,14 @@ If any critical requirement fails, **stop and fix** before continuing.
 - [ ] Tables properly formatted
 
 #### Consistency
+
 - [ ] Consistent terminology throughout
 - [ ] Consistent formatting style
 - [ ] Consistent heading capitalization
 - [ ] Consistent code style in examples
 
 #### Completeness
+
 - [ ] No TODO comments left unresolved
 - [ ] No placeholder text left in
 - [ ] All examples complete
@@ -260,17 +291,20 @@ If any critical requirement fails, **stop and fix** before continuing.
 ### 10. Best Practices
 
 #### Agent Activation
+
 - [ ] Description has clear triggers
 - [ ] Examples show when to use skill
 - [ ] Skill purpose is unambiguous
 
 #### Maintainability
+
 - [ ] Version number current (if versioned)
 - [ ] CHANGELOG.md updated (if versioned)
 - [ ] Last updated date accurate (if tracked)
 - [ ] Contact info current
 
 #### Discoverability
+
 - [ ] README.md makes purpose clear
 - [ ] Tags relevant (if used)
 - [ ] Category appropriate (if used)
@@ -282,22 +316,24 @@ If any critical requirement fails, **stop and fix** before continuing.
 
 Rate each category 0-5:
 
-| Category | Score | Description |
-|----------|-------|-------------|
-| **Structure** | __/5 | Files organized, naming correct |
-| **Frontmatter** | __/5 | Valid, complete, well-written |
-| **Content** | __/5 | Clear, actionable, complete |
-| **Documentation** | __/5 | README, examples, references |
-| **Quality** | __/5 | No errors, consistent, polished |
+| Category          | Score  | Description                     |
+| ----------------- | ------ | ------------------------------- |
+| **Structure**     | \_\_/5 | Files organized, naming correct |
+| **Frontmatter**   | \_\_/5 | Valid, complete, well-written   |
+| **Content**       | \_\_/5 | Clear, actionable, complete     |
+| **Documentation** | \_\_/5 | README, examples, references    |
+| **Quality**       | \_\_/5 | No errors, consistent, polished |
 
 **Target:** 4.5+ average = Production-ready
 
 **Calculation:**
+
 ```
 Total Score = (Structure + Frontmatter + Content + Documentation + Quality) / 5
 ```
 
 **Ratings:**
+
 - **5.0** = Perfect, exemplary
 - **4.5-4.9** = Excellent, ready to publish
 - **4.0-4.4** = Good, minor improvements needed
@@ -310,39 +346,40 @@ Total Score = (Structure + Frontmatter + Content + Documentation + Quality) / 5
 
 ### Critical Issues (Must Fix)
 
-| Issue | Detection | Fix |
-|-------|-----------|-----|
-| No SKILL.md | File missing | Create SKILL.md |
-| Invalid YAML | Syntax error | Fix YAML syntax |
-| Missing name | Field absent | Add `name:` to frontmatter |
-| Missing description | Field absent | Add `description:` to frontmatter |
-| No examples | No `<example>` | Add example blocks |
+| Issue               | Detection      | Fix                               |
+| ------------------- | -------------- | --------------------------------- |
+| No SKILL.md         | File missing   | Create SKILL.md                   |
+| Invalid YAML        | Syntax error   | Fix YAML syntax                   |
+| Missing name        | Field absent   | Add `name:` to frontmatter        |
+| Missing description | Field absent   | Add `description:` to frontmatter |
+| No examples         | No `<example>` | Add example blocks                |
 
 ### Major Issues (Should Fix)
 
-| Issue | Detection | Fix |
-|-------|-----------|-----|
-| SKILL.md > 1000 lines | File too long | Split into references/ |
-| Vague description | Generic text | Be specific, add triggers |
-| No README | File missing | Create README.md |
-| No LICENSE | File missing | Add LICENSE file |
-| Broken links | Link checker | Fix or remove links |
+| Issue                 | Detection     | Fix                       |
+| --------------------- | ------------- | ------------------------- |
+| SKILL.md > 1000 lines | File too long | Split into references/    |
+| Vague description     | Generic text  | Be specific, add triggers |
+| No README             | File missing  | Create README.md          |
+| No LICENSE            | File missing  | Add LICENSE file          |
+| Broken links          | Link checker  | Fix or remove links       |
 
 ### Minor Issues (Nice to Fix)
 
-| Issue | Detection | Fix |
-|-------|-----------|-----|
-| No version | metadata.version absent | Add versioning |
-| No tags | metadata.tags absent | Add relevant tags |
-| No CHANGELOG | File missing | Create CHANGELOG.md |
-| Long references | Files > 600 lines | Split topics |
-| Missing examples/ | No examples | Add concrete examples |
+| Issue             | Detection               | Fix                   |
+| ----------------- | ----------------------- | --------------------- |
+| No version        | metadata.version absent | Add versioning        |
+| No tags           | metadata.tags absent    | Add relevant tags     |
+| No CHANGELOG      | File missing            | Create CHANGELOG.md   |
+| Long references   | Files > 600 lines       | Split topics          |
+| Missing examples/ | No examples             | Add concrete examples |
 
 ---
 
 ## Automated Checks (Optional)
 
 ### YAML Syntax
+
 ```bash
 # Python YAML validation
 python3 << 'EOF'
@@ -351,16 +388,16 @@ import sys
 
 with open('SKILL.md', 'r') as f:
     content = f.read()
-    
+
 parts = content.split('---')
 if len(parts) < 3:
     print("ERROR: Invalid frontmatter format")
     sys.exit(1)
-    
+
 try:
     data = yaml.safe_load(parts[1])
     print("✓ YAML syntax valid")
-    
+
     # Check required fields
     if 'name' not in data:
         print("ERROR: Missing 'name' field")
@@ -368,10 +405,10 @@ try:
     if 'description' not in data:
         print("ERROR: Missing 'description' field")
         sys.exit(1)
-        
+
     print("✓ Required fields present")
     print(f"✓ Skill: {data['name']}")
-    
+
 except Exception as e:
     print(f"ERROR: {e}")
     sys.exit(1)
@@ -379,6 +416,7 @@ EOF
 ```
 
 ### Link Checking
+
 ```bash
 # Check for broken internal links
 grep -r '\[.*\](references/.*\.md)' SKILL.md | while read line; do
@@ -390,6 +428,7 @@ done
 ```
 
 ### File Size Check
+
 ```bash
 # Check SKILL.md size
 lines=$(wc -l < SKILL.md)
@@ -427,12 +466,14 @@ fi
 ### After Passing Validation
 
 1. **Version** (if not done)
+
    ```yaml
    metadata:
      version: "1.0.0"
    ```
 
 2. **Tag** (if using Git)
+
    ```bash
    git tag -a v1.0.0 -m "Release v1.0.0"
    git push --tags
@@ -455,6 +496,7 @@ fi
 **Minimum to pass:**
 
 ✅ **PASS if:**
+
 - SKILL.md exists
 - Valid YAML frontmatter
 - Has name and description
@@ -463,6 +505,7 @@ fi
 - No broken structure
 
 ❌ **FAIL if:**
+
 - Any critical requirement unchecked
 - YAML syntax invalid
 - Missing required fields
@@ -475,6 +518,7 @@ fi
 ## Summary
 
 Use this checklist **before sharing** your skill. A validated skill:
+
 - Works correctly
 - Is easy to understand
 - Follows standards

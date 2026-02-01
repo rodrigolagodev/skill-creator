@@ -23,13 +23,12 @@ name: your-skill-name
 description: >-
   What this skill does (1 sentence).
   When to use it (triggers).
-  
+
   <example>
   User: "Example request"
   Assistant: "I'll use the your-skill-name skill."
   </example>
 ---
-
 # Your Skill Name
 
 [Your instructions here...]
@@ -47,14 +46,14 @@ description: >-
 
 This process has 6 phases:
 
-| Phase | Description | Time | Guide |
-|-------|-------------|------|-------|
-| **1. Discovery** | Define purpose and scope | 5-10 min | [skill-discovery-planning.md](skill-discovery-planning.md) |
-| **2. Planning** | Choose structure and components | 5-10 min | [skill-discovery-planning.md](skill-discovery-planning.md) |
-| **3. Implementation** | Create files and content | 15-60 min | [skill-implementation.md](skill-implementation.md) |
-| **4. Validation** | Verify quality and completeness | 5-10 min | [skill-validation-publishing.md](skill-validation-publishing.md) |
-| **5. Testing** | Use skill in real scenarios | 10-20 min | [skill-validation-publishing.md](skill-validation-publishing.md) |
-| **6. Publishing** | Share with community (optional) | 10-15 min | [skill-validation-publishing.md](skill-validation-publishing.md) |
+| Phase                 | Description                     | Time      | Guide                                                            |
+| --------------------- | ------------------------------- | --------- | ---------------------------------------------------------------- |
+| **1. Discovery**      | Define purpose and scope        | 5-10 min  | [skill-discovery-planning.md](skill-discovery-planning.md)       |
+| **2. Planning**       | Choose structure and components | 5-10 min  | [skill-discovery-planning.md](skill-discovery-planning.md)       |
+| **3. Implementation** | Create files and content        | 15-60 min | [skill-implementation.md](skill-implementation.md)               |
+| **4. Validation**     | Verify quality and completeness | 5-10 min  | [skill-validation-publishing.md](skill-validation-publishing.md) |
+| **5. Testing**        | Use skill in real scenarios     | 10-20 min | [skill-validation-publishing.md](skill-validation-publishing.md) |
+| **6. Publishing**     | Share with community (optional) | 10-15 min | [skill-validation-publishing.md](skill-validation-publishing.md) |
 
 ---
 
@@ -63,11 +62,13 @@ This process has 6 phases:
 ### Phase 1-2: Discovery & Planning
 
 **Key Questions:**
+
 1. What specific problem does this skill solve?
 2. What should the skill DO and NOT do?
 3. What structure do you need? (Minimal/Standard/Complex)
 
 **Outputs:**
+
 - Skill name (kebab-case)
 - Scope definition
 - Structure choice
@@ -79,6 +80,7 @@ This process has 6 phases:
 ### Phase 3: Implementation
 
 **Key Steps:**
+
 1. Create SKILL.md with frontmatter
 2. Write core instructions
 3. Create references/ (if needed)
@@ -87,9 +89,10 @@ This process has 6 phases:
 6. Add README.md and LICENSE
 
 **Structure:**
+
 ```
 skill-name/
-├── SKILL.md          # Entry point (< 500 lines)
+├── SKILL.md          # Entry point (< 650 lines)
 ├── README.md         # GitHub documentation
 ├── LICENSE           # MIT recommended
 ├── references/       # Detailed docs
@@ -104,20 +107,24 @@ skill-name/
 ### Phase 4-6: Validation, Testing & Publishing
 
 **Validation Checklist:**
+
 - [ ] Valid YAML frontmatter
 - [ ] `name` is kebab-case
 - [ ] `description` includes what/when/examples
 - [ ] At least one `<example>` block
 - [ ] Instructions are clear
-- [ ] SKILL.md < 500 lines
+- [ ] SKILL.md < 650 lines
 - [ ] English language throughout
+- [ ] Verification loop completed
 
 **Testing:**
+
 1. Load skill in OpenCode
 2. Test with real scenarios
 3. Iterate based on results
 
 **Publishing:**
+
 1. Initialize git repository
 2. Push to GitHub
 3. Add topics: `agent-skills`, `opencode`, `claude`
@@ -138,41 +145,42 @@ mkdir -p ~/.config/opencode/skills/skill-name/{references,templates,workflows}
 # Verify
 tree ~/.config/opencode/skills/skill-name/
 
-# Count lines (should be < 500)
+# Count lines (should be < 650)
 wc -l ~/.config/opencode/skills/skill-name/SKILL.md
 ```
 
 ### File Size Guidelines
 
-| File | Recommended | Maximum |
-|------|-------------|---------|
-| SKILL.md | 200-400 lines | 500 lines |
-| References | 300-500 lines | 1000 lines |
-| Templates | 100-300 lines | 500 lines |
-| Workflows | 200-400 lines | 800 lines |
+| File       | Recommended   | Maximum   |
+| ---------- | ------------- | --------- |
+| SKILL.md   | 200-500 lines | 650 lines |
+| References | 100-300 lines | 600 lines |
+| Templates  | 50-200 lines  | 400 lines |
+| Workflows  | 100-400 lines | 800 lines |
 
 ### Common Mistakes
 
-| Mistake | Fix |
-|---------|-----|
-| Vague description | Add specific triggers and examples |
-| No examples | Add `<example>` blocks |
-| SKILL.md too long | Split into references/ |
-| Wrong name case | Use kebab-case |
-| Missing license | Add MIT or similar |
+| Mistake               | Fix                                 |
+| --------------------- | ----------------------------------- |
+| Vague description     | Add specific triggers and examples  |
+| No examples           | Add `<example>` blocks              |
+| SKILL.md too long     | Split into references/              |
+| Wrong name case       | Use kebab-case                      |
+| Missing license       | Add MIT or similar                  |
+| Skipping verification | Run verification loop post-creation |
 
 ---
 
 ## Resources
 
-| Resource | Description |
-|----------|-------------|
-| [skill-discovery-planning.md](skill-discovery-planning.md) | Phases 1-2: Discovery and Planning |
-| [skill-implementation.md](skill-implementation.md) | Phase 3: Implementation details |
-| [skill-validation-publishing.md](skill-validation-publishing.md) | Phases 4-6: Validation, Testing, Publishing |
-| [../references/validation-checklist.md](../references/validation-checklist.md) | Complete validation rubric |
-| [../references/frontmatter-spec.md](../references/frontmatter-spec.md) | YAML specification |
-| [../templates/minimal-skill.md](../templates/minimal-skill.md) | Basic template |
+| Resource                                                                       | Description                                 |
+| ------------------------------------------------------------------------------ | ------------------------------------------- |
+| [skill-discovery-planning.md](skill-discovery-planning.md)                     | Phases 1-2: Discovery and Planning          |
+| [skill-implementation.md](skill-implementation.md)                             | Phase 3: Implementation details             |
+| [skill-validation-publishing.md](skill-validation-publishing.md)               | Phases 4-6: Validation, Testing, Publishing |
+| [../references/validation-checklist.md](../references/validation-checklist.md) | Complete validation rubric                  |
+| [../references/frontmatter-spec.md](../references/frontmatter-spec.md)         | YAML specification                          |
+| [../templates/minimal-skill.md](../templates/minimal-skill.md)                 | Basic template                              |
 
 ---
 

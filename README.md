@@ -1,6 +1,6 @@
 # Skill Creator
 
-[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.2.0-blue.svg)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Agent Skills](https://img.shields.io/badge/standard-Agent%20Skills-orange.svg)](https://agentskills.io)
 
@@ -40,14 +40,14 @@ This skill follows the professional approach: **pure documentation that the LLM 
 
 ## Features
 
-| Feature | Description |
-|---------|-------------|
-| **Minimal Template** | Pre-configured skill template with TODOs |
-| **Frontmatter Spec** | Complete YAML specification with all fields |
-| **Skill Anatomy** | Deep dive into structure and organization |
-| **Validation Checklist** | Field-by-field verification guide |
-| **Creation Workflow** | Step-by-step guide from discovery to publishing |
-| **Best Practices** | Do's, don'ts, and anti-patterns |
+| Feature                  | Description                                     |
+| ------------------------ | ----------------------------------------------- |
+| **Minimal Template**     | Pre-configured skill template with TODOs        |
+| **Frontmatter Spec**     | Complete YAML specification with all fields     |
+| **Skill Anatomy**        | Deep dive into structure and organization       |
+| **Validation Checklist** | Field-by-field verification guide               |
+| **Creation Workflow**    | Step-by-step guide from discovery to publishing |
+| **Best Practices**       | Do's, don'ts, and anti-patterns                 |
 
 ---
 
@@ -67,12 +67,12 @@ ls ~/.config/opencode/skills/skill-creator/SKILL.md
 
 ### Other Platforms
 
-| Platform | Installation Path |
-|----------|-------------------|
+| Platform       | Installation Path                                           |
+| -------------- | ----------------------------------------------------------- |
 | Claude Desktop | `~/Library/Application Support/Claude/skills/skill-creator` |
-| Claude Code | `~/.claude/skills/skill-creator` |
-| Cursor | `.cursor/skills/skill-creator` |
-| VS Code | `.vscode/skills/skill-creator` |
+| Claude Code    | `~/.claude/skills/skill-creator`                            |
+| Cursor         | `.cursor/skills/skill-creator`                              |
+| VS Code        | `.vscode/skills/skill-creator`                              |
 
 ### Requirements
 
@@ -151,7 +151,7 @@ name: code-formatter
 description: >-
   Formats code according to language-specific standards.
   Use when code needs formatting or style fixes.
-  
+
   <example>
   User: "Format this Python code"
   Assistant: "I'll use the code-formatter skill."
@@ -162,7 +162,6 @@ compatibility: agent-skills-standard
 metadata:
   version: "1.0.0"
 ---
-
 # Code Formatter
 
 You are a code formatting specialist...
@@ -170,24 +169,24 @@ You are a code formatting specialist...
 
 ### Frontmatter Fields
 
-| Field | Required | Description |
-|-------|----------|-------------|
-| `name` | Yes | Skill identifier (kebab-case) |
-| `description` | Yes | What + when + examples (max 1024 chars) |
-| `license` | No | MIT, Apache-2.0, BSD-3-Clause |
-| `compatibility` | No | `agent-skills-standard`, `opencode`, `claude` |
-| `metadata` | No | Version, author, category, tags |
+| Field           | Required | Description                                   |
+| --------------- | -------- | --------------------------------------------- |
+| `name`          | Yes      | Skill identifier (kebab-case)                 |
+| `description`   | Yes      | What + when + examples (max 1024 chars)       |
+| `license`       | No       | MIT, Apache-2.0, BSD-3-Clause                 |
+| `compatibility` | No       | `agent-skills-standard`, `opencode`, `claude` |
+| `metadata`      | No       | Version, author, category, tags               |
 
 See [`references/frontmatter-spec.md`](references/frontmatter-spec.md) for complete specification.
 
 ### Directory Structure
 
-| Directory | Purpose | When to Use |
-|-----------|---------|-------------|
-| `references/` | Detailed documentation | Complex skills with multiple concepts |
-| `templates/` | Reusable starting points | Skills that generate content |
-| `workflows/` | Step-by-step guides | Multi-step processes |
-| `examples/` | Complete examples | Show real usage patterns |
+| Directory     | Purpose                  | When to Use                           |
+| ------------- | ------------------------ | ------------------------------------- |
+| `references/` | Detailed documentation   | Complex skills with multiple concepts |
+| `templates/`  | Reusable starting points | Skills that generate content          |
+| `workflows/`  | Step-by-step guides      | Multi-step processes                  |
+| `examples/`   | Complete examples        | Show real usage patterns              |
 
 ---
 
@@ -209,13 +208,13 @@ Use the [validation checklist](references/validation-checklist.md) to verify:
 
 Target score: **4.5+ / 5.0**
 
-| Category | What it measures |
-|----------|------------------|
-| Frontmatter | Name, description quality, examples |
-| Structure | Organization, file sizes, references |
-| Instructions | Clarity, actionability, completeness |
-| Examples | Concrete demonstrations, real scenarios |
-| Documentation | README, LICENSE, CHANGELOG |
+| Category      | What it measures                        |
+| ------------- | --------------------------------------- |
+| Frontmatter   | Name, description quality, examples     |
+| Structure     | Organization, file sizes, references    |
+| Instructions  | Clarity, actionability, completeness    |
+| Examples      | Concrete demonstrations, real scenarios |
+| Documentation | README, LICENSE, CHANGELOG              |
 
 ---
 
@@ -232,24 +231,24 @@ Target score: **4.5+ / 5.0**
 
 ### Don'ts
 
-| Anti-Pattern | Problem | Solution |
-|--------------|---------|----------|
-| Monolithic SKILL.md | Over 1000 lines | Split into references/ |
-| Vague description | "Helps with tasks" | Specific triggers and examples |
-| Missing examples | No `<example>` blocks | Add 1-2 usage examples |
-| Executable code | Scripts in skill | Pure markdown only |
-| Wrong language | Non-English content | Write in English |
-| No versioning | Breaking changes unclear | Use CHANGELOG.md |
+| Anti-Pattern        | Problem                  | Solution                       |
+| ------------------- | ------------------------ | ------------------------------ |
+| Monolithic SKILL.md | Over 1000 lines          | Split into references/         |
+| Vague description   | "Helps with tasks"       | Specific triggers and examples |
+| Missing examples    | No `<example>` blocks    | Add 1-2 usage examples         |
+| Executable code     | Scripts in skill         | Pure markdown only             |
+| Wrong language      | Non-English content      | Write in English               |
+| No versioning       | Breaking changes unclear | Use CHANGELOG.md               |
 
 ---
 
 ## Reference Documentation
 
-| Document | Description |
-|----------|-------------|
-| [`skill-anatomy.md`](references/skill-anatomy.md) | Complete structure breakdown |
-| [`frontmatter-spec.md`](references/frontmatter-spec.md) | YAML specification |
-| [`validation-checklist.md`](references/validation-checklist.md) | Quality verification |
+| Document                                                        | Description                  |
+| --------------------------------------------------------------- | ---------------------------- |
+| [`skill-anatomy.md`](references/skill-anatomy.md)               | Complete structure breakdown |
+| [`frontmatter-spec.md`](references/frontmatter-spec.md)         | YAML specification           |
+| [`validation-checklist.md`](references/validation-checklist.md) | Quality verification         |
 
 ---
 
@@ -273,6 +272,7 @@ Contributions are welcome! Here's how:
 ### Reporting Issues
 
 Open an issue with:
+
 - Description of the problem
 - Steps to reproduce
 - Expected vs actual behavior
@@ -286,9 +286,11 @@ See [CHANGELOG.md](CHANGELOG.md) for version history.
 ### Version 1.1.0 (Current)
 
 **Added:**
+
 - Interactive creation workflow with 8-phase guided wizard
 
 **Fixed:**
+
 - Corrected skill name in frontmatter (`creating-skills` → `skill-creator`)
 
 **Philosophy:**
@@ -313,6 +315,7 @@ MIT License - see [LICENSE](LICENSE) for details.
 ## Philosophy
 
 > "A great skill is like a well-written manual:
+>
 > - **Clear** about its purpose (description with examples)
 > - **Focused** on one domain (single responsibility)
 > - **Organized** for easy reference (SKILL.md + references)

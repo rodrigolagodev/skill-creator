@@ -10,9 +10,70 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Planned
+
 - Additional templates for specialized skill types (security, data-analysis, etc.)
 - Video tutorials for skill creation workflow
 - Community-contributed skill gallery
+
+---
+
+## [1.2.0] - 2026-01-31
+
+### Added
+
+- **Core Principle #5: Verification Loop** - Every skill must be verified post-creation
+  - Syntax check, structure check, link check, size check
+  - Decision tree for verification workflow
+  - Report template for completion confirmation
+
+- **Skill Complexity Scale** (🟢🟡🟠🔴)
+  - Micro (50-150 lines): Single concept skills
+  - Simple (150-300 lines): Focused domain with templates
+  - Standard (300-500 lines): Full workflow with references
+  - Complex (500-650 lines): Multi-domain systems
+  - Decision logic for choosing complexity level
+  - Upgrade signals documentation
+
+- **Token Optimization Guide**
+  - File size guidelines per file type
+  - Token-saving patterns (progressive loading, tables over prose, etc.)
+  - Content density targets per section type
+
+- **Post-Creation Verification Loop** section
+  - Bash commands for verification steps
+  - Functional tests table
+  - Verification decision tree
+  - Report template
+
+- **Expanded Anti-Patterns** (now 12 total)
+  - Skipping Verification
+  - Wrong Complexity
+  - No Token Optimization
+  - Missing Limitations
+  - Non-English Content
+  - No Progressive Disclosure
+
+- **Expanded Success Criteria** (now 13 total)
+  - Appropriate complexity level
+  - Token-optimized
+  - Has been verified post-creation
+  - Progressive disclosure
+
+### Changed
+
+- **SKILL.md line limit**: 500 → 650 lines (more realistic for useful content)
+- **File Organization section**: Condensed with links to skill-anatomy.md
+- **Frontmatter section**: Converted to tables for token efficiency
+- **Minimal Skill Example**: Replaced with link to template
+
+### Updated
+
+- **workflows/create-new-skill.md**: Updated line limits and added verification step
+- **references/validation-checklist.md**: Updated to 650 line limit
+
+### Philosophy
+
+Skills now follow the same professional patterns discovered in system prompts from Anthropic, OpenAI, Google, and xAI - including mandatory verification loops, complexity scaling, and cost optimization.
 
 ---
 
@@ -51,6 +112,7 @@ When user says "crear skill" or "create a skill" without details, prefer **Inter
 ### Added
 
 #### Core Documentation
+
 - **SKILL.md** (452 lines) - Main entry point with:
   - Complete YAML frontmatter specification
   - Core principles and philosophy
@@ -61,6 +123,7 @@ When user says "crear skill" or "create a skill" without details, prefer **Inter
   - Success criteria
 
 #### Reference Documentation (references/)
+
 - **skill-anatomy.md** (400+ lines) - Deep dive into:
   - Required vs optional files
   - Directory structure patterns
@@ -83,6 +146,7 @@ When user says "crear skill" or "create a skill" without details, prefer **Inter
   - Manual review guidelines
 
 #### Templates (templates/)
+
 - **minimal-skill.md** (400+ lines) - Basic template featuring:
   - Complete YAML frontmatter with TODO placeholders
   - Standard section structure
@@ -91,6 +155,7 @@ When user says "crear skill" or "create a skill" without details, prefer **Inter
   - Usage instructions
 
 #### Workflows (workflows/)
+
 - **create-new-skill.md** (900+ lines) - Complete creation workflow with:
   - 6-phase process (Discovery → Planning → Implementation → Validation → Testing → Publishing)
   - Step-by-step instructions for each phase
@@ -100,6 +165,7 @@ When user says "crear skill" or "create a skill" without details, prefer **Inter
   - Command cheatsheet and quick reference
 
 #### Supporting Files
+
 - **README.md** - GitHub-ready documentation with:
   - Feature overview
   - Installation instructions for multiple platforms
@@ -116,6 +182,7 @@ When user says "crear skill" or "create a skill" without details, prefer **Inter
 ### Documentation Philosophy
 
 This release follows these principles:
+
 - **Markdown-only** - No executable code, pure documentation
 - **Progressive disclosure** - Main file < 500 lines, details in references
 - **English-first** - Optimal for LLM processing
@@ -139,6 +206,7 @@ This release follows these principles:
 - **Skill Authors** - Comprehensive guide to best practices
 
 ### File Structure
+
 ```
 skill-creator/
 ├── SKILL.md                      (452 lines)
@@ -187,17 +255,20 @@ skill-creator/
 This is the first stable release of skill-creator. It provides everything needed to create, validate, and publish high-quality Agent Skills.
 
 **What's included:**
+
 - Complete documentation (SKILL.md + 3 references)
 - Production-ready template (minimal-skill.md)
 - Comprehensive workflow (create-new-skill.md)
 - GitHub-ready supporting files (README, LICENSE, CHANGELOG)
 
 **Who should use this:**
+
 - AI agents assisting with skill creation
 - Developers building skills for their projects
 - Community members contributing to Agent Skills ecosystem
 
 **Next steps after installation:**
+
 1. Read [SKILL.md](SKILL.md) for overview
 2. Follow [workflows/create-new-skill.md](workflows/create-new-skill.md) to create your first skill
 3. Use [templates/minimal-skill.md](templates/minimal-skill.md) as starting point
@@ -207,9 +278,9 @@ This is the first stable release of skill-creator. It provides everything needed
 
 ## Version History Summary
 
-| Version | Date | Type | Summary |
-|---------|------|------|---------|
-| 1.0.0 | 2026-01-25 | Major | Initial public release with complete documentation |
+| Version | Date       | Type  | Summary                                            |
+| ------- | ---------- | ----- | -------------------------------------------------- |
+| 1.0.0   | 2026-01-25 | Major | Initial public release with complete documentation |
 
 ---
 
