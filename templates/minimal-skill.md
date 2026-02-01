@@ -15,9 +15,9 @@ name: my-skill-name
 # 3. At least one <example> block
 description: >-
   TODO: Describe what this skill does in one clear sentence.
-  
+
   Use this skill when TODO: list triggers and use cases.
-  
+
   <example>
   User: "TODO: Example user query"
   Assistant: "I'll use the my-skill-name skill to help with that."
@@ -31,7 +31,7 @@ compatibility: agent-skills-standard
 
 # TODO: Fill in metadata or remove if not needed
 metadata:
-  category: TODO  # development, documentation, security, testing, etc.
+  category: TODO # development, documentation, security, testing, etc.
   version: "1.0.0"
   author: "TODO: Your Name"
   tags: [TODO, add, relevant, tags]
@@ -40,6 +40,7 @@ metadata:
 # TODO: Skill Display Name
 
 TODO: Write 1-3 paragraphs introducing your skill.
+
 - What does it do?
 - Why is it useful?
 - Who should use it?
@@ -58,7 +59,9 @@ TODO: Provide the fastest way to use this skill.
 
 **Example usage:**
 ```
+
 TODO: Show a simple example
+
 ```
 
 **What happens:**
@@ -128,7 +131,9 @@ TODO: List typical tasks this skill handles.
 
 **Example:**
 ```
+
 TODO: Show example
+
 ```
 
 ### Task 2: TODO
@@ -150,7 +155,9 @@ TODO: Provide concrete, real-world examples.
 
 **Input:**
 ```
+
 TODO: Show what user provides
+
 ```
 
 **Process:**
@@ -158,7 +165,9 @@ TODO: Explain what the skill does
 
 **Output:**
 ```
+
 TODO: Show the result
+
 ```
 
 ### Example 2: TODO Scenario
@@ -290,14 +299,14 @@ Before using this template:
 
 If you want to use variable replacement:
 
-| Variable | Replace With | Example |
-|----------|--------------|---------|
-| `{{SKILL_NAME}}` | Skill identifier | `code-reviewer` |
-| `{{SKILL_DISPLAY_NAME}}` | Human name | `Code Reviewer` |
-| `{{DESCRIPTION}}` | Full description | `Analyzes code...` |
-| `{{AUTHOR}}` | Your name | `Jane Smith` |
-| `{{CATEGORY}}` | Skill category | `development` |
-| `{{LICENSE}}` | License type | `MIT` |
+| Variable                 | Replace With     | Example            |
+| ------------------------ | ---------------- | ------------------ |
+| `{{SKILL_NAME}}`         | Skill identifier | `code-reviewer`    |
+| `{{SKILL_DISPLAY_NAME}}` | Human name       | `Code Reviewer`    |
+| `{{DESCRIPTION}}`        | Full description | `Analyzes code...` |
+| `{{AUTHOR}}`             | Your name        | `Jane Smith`       |
+| `{{CATEGORY}}`           | Skill category   | `development`      |
+| `{{LICENSE}}`            | License type     | `MIT`              |
 
 ## Next Steps
 
@@ -321,6 +330,7 @@ After customizing this template:
 ### Keep It Simple
 
 Don't fill every section if not needed. A minimal viable skill only needs:
+
 - Valid frontmatter (name + description)
 - Clear instructions
 - Usage examples
@@ -334,6 +344,7 @@ Don't fill every section if not needed. A minimal viable skill only needs:
 ### Use References for Detail
 
 If a topic needs >100 lines of explanation:
+
 1. Create `references/topic-name.md`
 2. Write detailed content there
 3. Link from SKILL.md: `See [Topic](references/topic-name.md)`
@@ -349,10 +360,12 @@ If a topic needs >100 lines of explanation:
 ### For Code Generation Skills
 
 Add:
+
 ```markdown
 ## Output Format
 
 Generated code follows:
+
 - Style guide: TODO
 - Formatting: TODO
 - Comments: TODO
@@ -365,16 +378,19 @@ See [templates/](templates/) for code templates.
 ### For Analysis Skills
 
 Add:
+
 ```markdown
 ## Analysis Criteria
 
 Checks for:
+
 1. TODO: Criterion 1
 2. TODO: Criterion 2
 
 ## Report Format
 
 Analysis results include:
+
 - Summary
 - Detailed findings
 - Recommendations
@@ -383,6 +399,7 @@ Analysis results include:
 ### For Automation Skills
 
 Add:
+
 ```markdown
 ## Workflow Steps
 
@@ -394,6 +411,7 @@ Add:
 ## Prerequisites
 
 Requires:
+
 - TODO: Tool/dependency 1
 - TODO: Tool/dependency 2
 ```
@@ -403,6 +421,7 @@ Requires:
 ## Full Example (Completed)
 
 See `agent-creator` skill for a complete, production-ready example:
+
 - Location: `~/.config/opencode/skills/agent-creator/`
 - Features all directories (references, templates, workflows)
 - Well-documented and tested

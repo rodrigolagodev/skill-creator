@@ -31,6 +31,7 @@ LINES=$(wc -l < SKILL.md)
 ```
 
 **Manual checks:**
+
 - [ ] YAML frontmatter is valid (no syntax errors)
 - [ ] `name` is kebab-case
 - [ ] `description` includes what/when/examples
@@ -58,12 +59,14 @@ tree ~/.config/opencode/skills/your-skill-name/
 ### Step 4.3: Test YAML Parsing
 
 **If you have `yq` installed:**
+
 ```bash
 # Extract and validate frontmatter
 sed -n '/^---$/,/^---$/p' SKILL.md | yq eval '.'
 ```
 
 **Manual test:**
+
 - Copy frontmatter (between `---` markers)
 - Paste into https://www.yamllint.com/
 - Check for errors
@@ -92,6 +95,7 @@ ls -la ~/.config/opencode/skills/your-skill-name/
 4. **Verify** output quality
 
 **Example test:**
+
 ```
 Test Skill: api-documenter
 Scenario: "Document this API endpoint"
@@ -105,14 +109,15 @@ Result: [ ] Pass  [ ] Fail
 
 **Common issues and fixes:**
 
-| Issue | Likely Cause | Fix |
-|-------|--------------|-----|
-| Skill not loading | YAML syntax error | Validate frontmatter |
-| Agent doesn't activate | Description too vague | Add specific triggers/examples |
-| Output quality poor | Instructions unclear | Add more examples, detail |
-| Wrong skill activates | Overlapping descriptions | Refine scope, add boundaries |
+| Issue                  | Likely Cause             | Fix                            |
+| ---------------------- | ------------------------ | ------------------------------ |
+| Skill not loading      | YAML syntax error        | Validate frontmatter           |
+| Agent doesn't activate | Description too vague    | Add specific triggers/examples |
+| Output quality poor    | Instructions unclear     | Add more examples, detail      |
+| Wrong skill activates  | Overlapping descriptions | Refine scope, add boundaries   |
 
 **Refinement process:**
+
 1. Test skill with realistic task
 2. Identify gaps/issues
 3. Update SKILL.md
@@ -126,6 +131,7 @@ Result: [ ] Pass  [ ] Fail
 ### Step 6.1: Prepare for GitHub
 
 **Initialize git repository:**
+
 ```bash
 cd ~/.config/opencode/skills/your-skill-name/
 git init
@@ -134,6 +140,7 @@ git commit -m "Initial commit: v1.0.0"
 ```
 
 **Create .gitignore (if needed):**
+
 ```bash
 cat > .gitignore << 'EOF'
 # OS files
@@ -171,6 +178,7 @@ git push -u origin main
 ### Step 6.4: Add Topics/Tags
 
 On GitHub repository page:
+
 - Click "About" settings (⚙️)
 - Add topics: `agent-skills`, `opencode`, `claude`, `ai-agents`, etc.
 - Add website: `https://agentskills.io`
@@ -178,12 +186,14 @@ On GitHub repository page:
 ### Step 6.5: Share with Community
 
 **Where to share:**
+
 - [Agent Skills Registry](https://agentskills.io) (if available)
 - OpenCode community
 - GitHub discussions
 - Social media (X/Twitter, LinkedIn, etc.)
 
 **Announcement template:**
+
 ```
 🚀 Just released [Skill Name] - an Agent Skill for [purpose]
 
@@ -204,6 +214,7 @@ Compatible with OpenCode, Claude, Cursor, and more platforms.
 ## Summary
 
 **You've learned how to:**
+
 - ✅ Validate skill against checklist
 - ✅ Test with real scenarios
 - ✅ Iterate based on feedback
@@ -212,10 +223,10 @@ Compatible with OpenCode, Claude, Cursor, and more platforms.
 
 **Quality Gates:**
 
-| Gate | Criteria |
-|------|----------|
-| Validation | All checklist items pass |
-| Testing | Real scenarios work correctly |
+| Gate       | Criteria                      |
+| ---------- | ----------------------------- |
+| Validation | All checklist items pass      |
+| Testing    | Real scenarios work correctly |
 | Publishing | Repository complete with docs |
 
 ---
@@ -241,4 +252,4 @@ Compatible with OpenCode, Claude, Cursor, and more platforms.
 
 ---
 
-*Back to [create-new-skill.md](create-new-skill.md) for overview*
+_Back to [create-new-skill.md](create-new-skill.md) for overview_

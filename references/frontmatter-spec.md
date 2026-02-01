@@ -36,6 +36,7 @@ metadata:
 **Purpose:** Unique identifier for the skill.
 
 **Valid examples:**
+
 ```yaml
 name: code-reviewer
 name: api-documentation
@@ -44,6 +45,7 @@ name: security-audit
 ```
 
 **Invalid examples:**
+
 ```yaml
 name: Code Reviewer      # ❌ Contains spaces
 name: api_documentation  # ❌ Uses underscores
@@ -52,6 +54,7 @@ name: my skill           # ❌ Spaces
 ```
 
 **Rules:**
+
 - Must be unique within your skills directory
 - Use nouns or verb phrases
 - Descriptive, not generic (`code-reviewer` not `helper`)
@@ -68,11 +71,12 @@ name: my skill           # ❌ Spaces
 **Purpose:** Tells agents **what** the skill does and **when** to use it.
 
 **Structure:**
+
 ```yaml
 description: >-
   [WHAT] One sentence describing the skill.
   [WHEN] When to use it (triggers).
-  
+
   <example>
   User: "[trigger phrase]"
   Assistant: "I'll use the [skill-name] skill."
@@ -80,16 +84,17 @@ description: >-
 ```
 
 **Example 1: Code Review Skill**
+
 ```yaml
 description: >-
   Analyzes code for quality, security, and best practices using static analysis.
   Use when reviewing pull requests, auditing codebases, or checking for vulnerabilities.
-  
+
   <example>
   User: "Review this Python code for security issues"
   Assistant: "I'll use the code-reviewer skill to analyze security."
   </example>
-  
+
   <example>
   User: "Check if this follows best practices"
   Assistant: "I'll use the code-reviewer skill."
@@ -97,11 +102,12 @@ description: >-
 ```
 
 **Example 2: Documentation Skill**
+
 ```yaml
 description: >-
   Creates comprehensive documentation for APIs, libraries, and codebases.
   Use when documenting new features, generating API references, or creating guides.
-  
+
   <example>
   User: "Document this API endpoint"
   Assistant: "I'll use the api-documentation skill."
@@ -109,6 +115,7 @@ description: >-
 ```
 
 **Best Practices:**
+
 - ✅ Start with what it does (1 sentence)
 - ✅ Include when to use (triggers)
 - ✅ Add 1-2 `<example>` blocks
@@ -130,6 +137,7 @@ Assistant: "I'll use the [skill-name] skill."
 ```
 
 Multiple examples improve activation accuracy:
+
 ```yaml
 <example>
 User: "Review this code"
@@ -166,6 +174,7 @@ license: MIT
 | `BSD-3-Clause` | Similar to MIT with attribution requirement |
 
 **Must match LICENSE file** in skill root:
+
 ```
 skill-name/
 ├── SKILL.md
@@ -183,11 +192,13 @@ skill-name/
 **Purpose:** Indicates platform compatibility.
 
 **Single platform:**
+
 ```yaml
 compatibility: opencode
 ```
 
 **Multiple platforms:**
+
 ```yaml
 compatibility:
   - agent-skills-standard
@@ -197,6 +208,7 @@ compatibility:
 ```
 
 **Standard compliance:**
+
 ```yaml
 compatibility: agent-skills-standard
 ```
@@ -229,6 +241,7 @@ metadata:
 Organizational category for grouping skills.
 
 **Common categories:**
+
 ```yaml
 metadata:
   category: development       # Code-related
@@ -247,10 +260,11 @@ Semantic versioning for the skill.
 
 ```yaml
 metadata:
-  version: "1.0.0"    # Major.Minor.Patch
+  version: "1.0.0" # Major.Minor.Patch
 ```
 
 **Format:** [Semantic Versioning](https://semver.org/)
+
 - `1.0.0` - Initial release
 - `1.1.0` - Added features (backward compatible)
 - `2.0.0` - Breaking changes
@@ -283,6 +297,7 @@ metadata:
 ```
 
 **Best practices:**
+
 - 3-7 tags
 - Lowercase
 - Technology names (python, javascript)
@@ -331,15 +346,15 @@ description: >-
   Performs comprehensive security audits on codebases to identify vulnerabilities,
   misconfigurations, and potential attack vectors. Uses static analysis, dependency
   checking, and security best practice validation.
-  
+
   Use when reviewing code for security issues, auditing projects before deployment,
   or investigating potential security concerns.
-  
+
   <example>
   User: "Audit this codebase for security vulnerabilities"
   Assistant: "I'll use the security-auditor skill to perform a comprehensive scan."
   </example>
-  
+
   <example>
   User: "Check for SQL injection risks"
   Assistant: "I'll use the security-auditor skill focusing on injection vulnerabilities."
@@ -368,6 +383,7 @@ metadata:
 ### Syntax Validation
 
 **Valid YAML:**
+
 ```yaml
 ---
 name: my-skill
@@ -376,6 +392,7 @@ description: This is valid
 ```
 
 **Invalid YAML:**
+
 ```yaml
 ---
 name my-skill          # ❌ Missing colon
@@ -386,33 +403,37 @@ description: "unclosed # ❌ Unclosed quote
 **Multi-line strings:**
 
 Use `>-` for folded (removes newlines):
+
 ```yaml
 description: >-
   Line 1
   Line 2
   Line 3
+
 # Becomes: "Line 1 Line 2 Line 3"
 ```
 
 Use `|` for literal (keeps newlines):
+
 ```yaml
 description: |
   Line 1
   Line 2
   Line 3
+
 # Becomes: "Line 1\nLine 2\nLine 3"
 ```
 
 ### Field Validation
 
-| Field | Rule | Invalid Example | Valid Example |
-|-------|------|----------------|---------------|
-| `name` | kebab-case | `My Skill` | `my-skill` |
-| `name` | < 64 chars | `very-long-skill-name-that-exceeds-the-maximum-allowed-length-limit` | `concise-skill` |
-| `description` | < 1024 chars | (1500 char description) | (500 char description) |
-| `description` | Has examples | No `<example>` | Has `<example>` blocks |
-| `license` | Valid SPDX | `My License` | `MIT` |
-| `version` | Semver | `1.0` | `1.0.0` |
+| Field         | Rule         | Invalid Example                                                      | Valid Example          |
+| ------------- | ------------ | -------------------------------------------------------------------- | ---------------------- |
+| `name`        | kebab-case   | `My Skill`                                                           | `my-skill`             |
+| `name`        | < 64 chars   | `very-long-skill-name-that-exceeds-the-maximum-allowed-length-limit` | `concise-skill`        |
+| `description` | < 1024 chars | (1500 char description)                                              | (500 char description) |
+| `description` | Has examples | No `<example>`                                                       | Has `<example>` blocks |
+| `license`     | Valid SPDX   | `My License`                                                         | `MIT`                  |
+| `version`     | Semver       | `1.0`                                                                | `1.0.0`                |
 
 ---
 
@@ -421,6 +442,7 @@ description: |
 ### 1. Missing Required Fields
 
 ❌ **Wrong:**
+
 ```yaml
 ---
 name: my-skill
@@ -429,12 +451,13 @@ name: my-skill
 ```
 
 ✅ **Correct:**
+
 ```yaml
 ---
 name: my-skill
 description: >-
   What it does.
-  
+
   <example>
   User: "..."
   Assistant: "I'll use my-skill"
@@ -445,6 +468,7 @@ description: >-
 ### 2. Invalid name Format
 
 ❌ **Wrong:**
+
 ```yaml
 name: My Skill        # Spaces
 name: my_skill        # Underscores
@@ -452,22 +476,25 @@ name: mySkill         # CamelCase
 ```
 
 ✅ **Correct:**
+
 ```yaml
-name: my-skill        # kebab-case
+name: my-skill # kebab-case
 ```
 
 ### 3. No Examples in Description
 
 ❌ **Wrong:**
+
 ```yaml
 description: This skill helps with coding tasks.
 ```
 
 ✅ **Correct:**
+
 ```yaml
 description: >-
   This skill helps with coding tasks.
-  
+
   <example>
   User: "Help me code this feature"
   Assistant: "I'll use this skill."
@@ -477,6 +504,7 @@ description: >-
 ### 4. Description Too Long
 
 ❌ **Wrong:**
+
 ```yaml
 description: >-
   [1500 characters of text...]
@@ -484,23 +512,26 @@ description: >-
 ```
 
 ✅ **Correct:**
+
 ```yaml
 description: >-
   Concise description (< 1024 chars).
   Move details to SKILL.md body.
-  
+
   <example>...</example>
 ```
 
 ### 5. Incorrect Metadata Nesting
 
 ❌ **Wrong:**
+
 ```yaml
-category: development    # Not nested under metadata
+category: development # Not nested under metadata
 version: "1.0.0"
 ```
 
 ✅ **Correct:**
+
 ```yaml
 metadata:
   category: development
@@ -514,6 +545,7 @@ metadata:
 ### Manual Validation
 
 1. **YAML syntax:**
+
    ```bash
    # Using Python
    python -c "import yaml; yaml.safe_load(open('SKILL.md').read().split('---')[1])"

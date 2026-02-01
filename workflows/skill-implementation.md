@@ -7,6 +7,7 @@ Phase 3 of skill creation: Create files and content.
 ## Step 3.1: Start with Template
 
 **Option A: Copy from template**
+
 ```bash
 # Read the minimal template
 cat ~/.config/opencode/skills/skill-creator/templates/minimal-skill.md
@@ -22,13 +23,12 @@ name: your-skill-name
 description: >-
   [What it does - 1 sentence]
   [When to use - triggers and scenarios]
-  
+
   <example>
   User: "[Example user request]"
   Assistant: "I'll use the [your-skill-name] skill."
   </example>
 ---
-
 # Your Skill Name
 
 [Your content here...]
@@ -42,11 +42,11 @@ Fill in required fields:
 
 ```yaml
 ---
-name: your-skill-name              # TODO: kebab-case, descriptive
-description: >-                    # TODO: what + when + examples
+name: your-skill-name # TODO: kebab-case, descriptive
+description: >- # TODO: what + when + examples
   What this skill does (be specific).
   When to use it (triggers).
-  
+
   <example>
   User: "Example request"
   Assistant: "I'll use the skill-name skill."
@@ -55,12 +55,13 @@ description: >-                    # TODO: what + when + examples
 ```
 
 **Optional but recommended:**
+
 ```yaml
 ---
-license: MIT                       # Or Apache-2.0, BSD-3-Clause
+license: MIT # Or Apache-2.0, BSD-3-Clause
 compatibility: agent-skills-standard
 metadata:
-  category: development            # or security, data-analysis, etc.
+  category: development # or security, data-analysis, etc.
   version: "1.0.0"
   author: "Your Name"
   tags: [tag1, tag2]
@@ -68,6 +69,7 @@ metadata:
 ```
 
 **Validation:**
+
 - [ ] `name` is kebab-case
 - [ ] `description` has 3 parts: what/when/example
 - [ ] At least one `<example>` block exists
@@ -115,10 +117,12 @@ Instructions for this capability...
 ## When to Use
 
 Use this skill when:
+
 - [Trigger scenario 1]
 - [Trigger scenario 2]
 
 Do NOT use this skill for:
+
 - [Out of scope 1]
 - [Out of scope 2]
 
@@ -134,6 +138,7 @@ Do NOT use this skill for:
 ```
 
 **Guidelines:**
+
 - Use **active voice** ("Analyze the code" not "The code should be analyzed")
 - Include **specific examples** (concrete > abstract)
 - Define **boundaries** (what skill won't do)
@@ -144,16 +149,19 @@ Do NOT use this skill for:
 ## Step 3.4: Create References (if needed)
 
 **When to create references:**
+
 - SKILL.md is getting > 400 lines
 - You have distinct sub-topics
 - Detailed specs/APIs need documentation
 
 **Create reference files:**
+
 ```bash
 mkdir -p ~/.config/opencode/skills/your-skill-name/references/
 ```
 
 **Common reference patterns:**
+
 ```
 references/
 ├── core-concepts.md        # Fundamental ideas
@@ -164,6 +172,7 @@ references/
 ```
 
 **Reference file structure:**
+
 ```markdown
 # Topic Name
 
@@ -188,6 +197,7 @@ Concrete examples...
 ```
 
 **Link from SKILL.md:**
+
 ```markdown
 ## Advanced Usage
 
@@ -199,16 +209,19 @@ For complex scenarios, see [references/advanced-usage.md](references/advanced-us
 ## Step 3.5: Create Templates (if needed)
 
 **When to create templates:**
+
 - Skill generates code/content
 - Users need starting points
 - Repetitive patterns exist
 
 **Create template files:**
+
 ```bash
 mkdir -p ~/.config/opencode/skills/your-skill-name/templates/
 ```
 
 **Template structure:**
+
 ```markdown
 # Template Name
 
@@ -227,16 +240,18 @@ Brief description of what this template is for.
 {{VARIABLE_1}}
 
 # Your content here
+
 {{VARIABLE_2}}
 
 ## Variables
 
-| Variable | Description | Example |
-|----------|-------------|---------|
-| `{{VARIABLE_1}}` | What it is | `example-value` |
+| Variable         | Description | Example         |
+| ---------------- | ----------- | --------------- |
+| `{{VARIABLE_1}}` | What it is  | `example-value` |
 ```
 
 **Use clear variable syntax:**
+
 - `{{VARIABLE}}` or `$VARIABLE` or `[VARIABLE]`
 - Be consistent within skill
 
@@ -245,16 +260,19 @@ Brief description of what this template is for.
 ## Step 3.6: Create Workflows (if needed)
 
 **When to create workflows:**
+
 - Multi-step processes
 - Setup/configuration needed
 - Common task sequences
 
 **Create workflow files:**
+
 ```bash
 mkdir -p ~/.config/opencode/skills/your-skill-name/workflows/
 ```
 
 **Workflow structure:**
+
 ```markdown
 # Workflow Name
 
@@ -298,11 +316,13 @@ Instructions...
 ## Step 3.7: Add Examples (if needed)
 
 **Create example files:**
+
 ```bash
 mkdir -p ~/.config/opencode/skills/your-skill-name/examples/
 ```
 
 **Example file structure:**
+
 ```markdown
 # Example: [Scenario Name]
 
@@ -372,6 +392,7 @@ git clone https://github.com/username/skill-name.git ~/.config/opencode/skills/s
 This skill follows the [Agent Skills standard](https://agentskills.io).
 
 **Compatible platforms:**
+
 - OpenCode
 - Claude / Claude Code
 - Cursor
@@ -424,6 +445,7 @@ All notable changes to this skill will be documented in this file.
 ## [1.0.0] - 2026-01-25
 
 ### Added
+
 - Initial release
 - SKILL.md with core functionality
 - README.md with installation guide
@@ -452,4 +474,4 @@ All notable changes to this skill will be documented in this file.
 
 ---
 
-*Back to [create-new-skill.md](create-new-skill.md) for overview*
+_Back to [create-new-skill.md](create-new-skill.md) for overview_

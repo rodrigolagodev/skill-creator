@@ -73,24 +73,25 @@ Links to references/ files
 
 ### Size Guidelines
 
-| Size | Recommendation |
-|------|----------------|
-| **< 500 lines** | ✅ Ideal - Quick to load |
+| Size               | Recommendation                         |
+| ------------------ | -------------------------------------- |
+| **< 500 lines**    | ✅ Ideal - Quick to load               |
 | **500-1000 lines** | ⚠️ Consider splitting into references/ |
-| **> 1000 lines** | ❌ Too large - MUST split |
+| **> 1000 lines**   | ❌ Too large - MUST split              |
 
 **Why?** Large files slow down context loading and make skills hard to maintain.
 
 ### Frontmatter (YAML)
 
 **Required fields:**
+
 ```yaml
 ---
-name: skill-identifier        # kebab-case, no spaces
-description: >-               # Multi-line, includes examples
+name: skill-identifier # kebab-case, no spaces
+description: >- # Multi-line, includes examples
   What this skill does.
   When to use it.
-  
+
   <example>
   User: "..."
   Assistant: "I'll use skill-identifier"
@@ -99,6 +100,7 @@ description: >-               # Multi-line, includes examples
 ```
 
 **Optional fields:**
+
 ```yaml
 ---
 license: MIT
@@ -140,6 +142,7 @@ Concrete usage with code blocks
 ```
 
 **Best practices:**
+
 - Use standard markdown headings (not XML tags)
 - Include code blocks with syntax highlighting
 - Add `<example>` blocks in description
@@ -153,7 +156,7 @@ Concrete usage with code blocks
 
 ### Structure
 
-```markdown
+````markdown
 # Skill Name
 
 Brief description and badges
@@ -167,6 +170,7 @@ What this skill does
 ```bash
 # How to install
 ```
+````
 
 ## Quick Start
 
@@ -188,7 +192,8 @@ How to contribute
 ## License
 
 MIT / Apache / etc.
-```
+
+````
 
 ### Why Include README?
 
@@ -209,7 +214,7 @@ MIT / Apache / etc.
 ```bash
 # Clone to skills directory
 git clone https://github.com/{{USER}}/{{REPO}} ~/.config/opencode/skills/{{SKILL_NAME}}
-```
+````
 
 ## Usage
 
@@ -222,6 +227,7 @@ See [SKILL.md](SKILL.md) for complete documentation.
 ## License
 
 {{LICENSE}} - see [LICENSE](LICENSE) for details.
+
 ```
 
 ---
@@ -241,6 +247,7 @@ See [SKILL.md](SKILL.md) for complete documentation.
 ### Example: MIT License
 
 ```
+
 MIT License
 
 Copyright (c) 2026 Your Name
@@ -248,7 +255,8 @@ Copyright (c) 2026 Your Name
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction...
-```
+
+````
 
 **Get full text:** https://choosealicense.com/licenses/mit/
 
@@ -260,7 +268,7 @@ Match your LICENSE file with frontmatter:
 ---
 license: MIT    # References LICENSE file
 ---
-```
+````
 
 ---
 
@@ -271,6 +279,7 @@ license: MIT    # References LICENSE file
 ### When to Use
 
 Use `references/` when:
+
 - SKILL.md exceeds 500 lines
 - Topic requires deep technical explanation
 - Multiple related concepts need organization
@@ -314,6 +323,7 @@ references/
 ### File Naming
 
 Use **kebab-case** with descriptive names:
+
 - ✅ `error-handling.md`
 - ✅ `database-migrations.md`
 - ❌ `ref1.md`
@@ -325,6 +335,7 @@ Use **kebab-case** with descriptive names:
 ## Advanced Topics
 
 For detailed information, see:
+
 - [Error Handling](references/error-handling.md)
 - [Database Migrations](references/database-migrations.md)
 ```
@@ -338,6 +349,7 @@ For detailed information, see:
 ### When to Use
 
 Use `templates/` when your skill:
+
 - Generates files (code, configs, docs)
 - Provides boilerplate structures
 - Offers multiple starting points
@@ -347,16 +359,18 @@ Use `templates/` when your skill:
 Use placeholders for customization:
 
 **Style 1: Jinja2-style**
+
 ```markdown
 ---
-name: {{SKILL_NAME}}
-description: {{DESCRIPTION}}
+name: { { SKILL_NAME } }
+description: { { DESCRIPTION } }
 ---
 
 # {{SKILL_NAME | title}}
 ```
 
 **Style 2: Shell-style**
+
 ```markdown
 ---
 name: $SKILL_NAME
@@ -367,9 +381,10 @@ description: $DESCRIPTION
 ```
 
 **Style 3: TODO comments**
+
 ```markdown
 ---
-name: my-skill  # TODO: Replace with actual name
+name: my-skill # TODO: Replace with actual name
 description: TODO
 ---
 
@@ -379,12 +394,15 @@ description: TODO
 ### Examples
 
 #### Basic Template
+
 ```markdown
 # templates/basic-template.md
 
 ---
+
 name: $SKILL_NAME
 description: $DESCRIPTION
+
 ---
 
 # $SKILL_NAME
@@ -397,10 +415,12 @@ TODO: Add main instructions
 ```
 
 #### Advanced Template
+
 ```markdown
 # templates/advanced-template.md
 
 Includes:
+
 - Complete frontmatter
 - All sections pre-populated
 - Examples and best practices
@@ -416,6 +436,7 @@ Includes:
 ### When to Use
 
 Use `workflows/` for:
+
 - Multi-step procedures
 - Setup/installation guides
 - Troubleshooting processes
@@ -423,7 +444,7 @@ Use `workflows/` for:
 
 ### Structure
 
-```markdown
+````markdown
 # Workflow: {{NAME}}
 
 ## Overview
@@ -444,8 +465,10 @@ Description
 ```bash
 # Commands
 ```
+````
 
 **Expected output:**
+
 ```
 ...
 ```
@@ -461,6 +484,7 @@ How to confirm success
 ## Troubleshooting
 
 Common issues and solutions
+
 ```
 
 ### Examples
@@ -487,17 +511,19 @@ Use `examples/` for:
 ### Organization
 
 ```
+
 examples/
 ├── basic-example/
-│   ├── README.md
-│   ├── input.md
-│   └── output.md
+│ ├── README.md
+│ ├── input.md
+│ └── output.md
 │
 └── advanced-example/
-    ├── README.md
-    ├── files/
-    └── documentation.md
-```
+├── README.md
+├── files/
+└── documentation.md
+
+````
 
 ### Example README
 
@@ -521,7 +547,7 @@ How to run this example
 
 - Key concept 1
 - Key concept 2
-```
+````
 
 ---
 
@@ -539,14 +565,17 @@ Use [Keep a Changelog](https://keepachangelog.com/) format:
 ## [1.1.0] - 2026-01-25
 
 ### Added
+
 - New template: advanced-template.md
 - Reference: api-documentation.md
 
 ### Changed
+
 - Improved SKILL.md structure
 - Updated examples
 
 ### Fixed
+
 - Typo in frontmatter-spec.md
 
 ## [1.0.0] - 2026-01-20
@@ -558,13 +587,13 @@ Initial release
 
 ## File Size Guidelines
 
-| File Type | Ideal Size | Max Size | Action if Exceeded |
-|-----------|------------|----------|-------------------|
-| SKILL.md | < 500 lines | 1000 lines | Split into references/ |
-| References | < 300 lines | 600 lines | Split into sub-topics |
-| Templates | < 200 lines | 400 lines | Create variants |
-| Workflows | < 400 lines | 800 lines | Split into steps |
-| README.md | < 200 lines | 400 lines | Link to docs |
+| File Type  | Ideal Size  | Max Size   | Action if Exceeded     |
+| ---------- | ----------- | ---------- | ---------------------- |
+| SKILL.md   | < 500 lines | 1000 lines | Split into references/ |
+| References | < 300 lines | 600 lines  | Split into sub-topics  |
+| Templates  | < 200 lines | 400 lines  | Create variants        |
+| Workflows  | < 400 lines | 800 lines  | Split into steps       |
+| README.md  | < 200 lines | 400 lines  | Link to docs           |
 
 ---
 
@@ -582,7 +611,6 @@ my-skill/
 name: my-skill
 description: What it does, when to use it.
 ---
-
 # My Skill
 
 Instructions here...
@@ -616,13 +644,13 @@ my-skill/
 
 ## Common Mistakes
 
-| Mistake | Problem | Solution |
-|---------|---------|----------|
+| Mistake             | Problem                 | Solution               |
+| ------------------- | ----------------------- | ---------------------- |
 | Monolithic SKILL.md | Too large (>1000 lines) | Split into references/ |
-| Missing description | Agents won't activate | Add what/when/examples |
-| No examples | Users don't know usage | Add `<example>` blocks |
-| Executable scripts | Breaks portability | Use markdown docs |
-| Wrong structure | Doesn't follow standard | Follow this anatomy |
+| Missing description | Agents won't activate   | Add what/when/examples |
+| No examples         | Users don't know usage  | Add `<example>` blocks |
+| Executable scripts  | Breaks portability      | Use markdown docs      |
+| Wrong structure     | Doesn't follow standard | Follow this anatomy    |
 
 ---
 
@@ -631,6 +659,7 @@ my-skill/
 Use [validation-checklist.md](validation-checklist.md) to verify your skill structure.
 
 **Quick checklist:**
+
 - [ ] SKILL.md exists
 - [ ] Valid YAML frontmatter
 - [ ] name and description present

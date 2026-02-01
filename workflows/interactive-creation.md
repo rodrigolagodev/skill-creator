@@ -74,7 +74,7 @@ Entiendo. Tu skill servirá para: [paraphrase their answer]
 ```
 Basándome en lo que me contaste, sugiero estos nombres:
 
-1. `[suggested-name-1]` 
+1. `[suggested-name-1]`
 2. `[suggested-name-2]`
 3. `[suggested-name-3]`
 
@@ -86,6 +86,7 @@ Basándome en lo que me contaste, sugiero estos nombres:
 **Wait for response.**
 
 **Validate the name:**
+
 - Is it kebab-case? If not, suggest correction
 - Is it descriptive? If too vague (helper, utils), suggest alternative
 - Confirm final name
@@ -118,7 +119,7 @@ Basándome en lo que me contaste, sugiero estos nombres:
 **Ask:**
 
 ```
-¿Cuándo debería activarse tu skill? 
+¿Cuándo debería activarse tu skill?
 
 Dame 2-3 situaciones donde un usuario pediría ayuda que este skill puede resolver.
 
@@ -233,10 +234,10 @@ Resumen del alcance:
 
 1. **Simple** - Solo necesita SKILL.md (< 300 líneas)
    → Skill enfocado en una tarea específica
-   
+
 2. **Estándar** - SKILL.md + algunos archivos de referencia
    → Tiene varios conceptos que explicar
-   
+
 3. **Complejo** - Estructura completa con templates y workflows
    → Múltiples procesos, plantillas reutilizables
 
@@ -368,7 +369,7 @@ Gracias. ¿Puedes darme más detalles sobre:
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-¿Todo correcto? 
+¿Todo correcto?
 
 Opciones:
 1. ✅ Crear el skill ahora
@@ -423,7 +424,7 @@ Opciones:
 name: [skill-name]
 description: >-
   [Generated description with what + when + example]
-  
+
   <example>
   User: "[their example]"
   Assistant: "I'll use the [skill-name] skill."
@@ -489,6 +490,7 @@ Do NOT use this skill for:
 **If Standard or Complex structure:**
 
 Create additional files based on their choices:
+
 - `references/*.md`
 - `templates/*.md`
 - `workflows/*.md`
@@ -577,6 +579,7 @@ Create additional files based on their choices:
 ## Key Behaviors
 
 ### DO:
+
 - ✅ Ask ONE question at a time
 - ✅ Wait for user response before proceeding
 - ✅ Confirm understanding before moving on
@@ -586,6 +589,7 @@ Create additional files based on their choices:
 - ✅ Show progress ("Fase 3 de 8...")
 
 ### DON'T:
+
 - ❌ Ask multiple questions at once
 - ❌ Assume answers without confirmation
 - ❌ Skip phases
@@ -685,8 +689,8 @@ Detect user's language and adapt:
 ```
 Response example (if user writes in Spanish):
 
-"El contenido del SKILL.md lo escribiré en inglés para mejor 
-compatibilidad con los LLMs, pero nuestra conversación puede 
+"El contenido del SKILL.md lo escribiré en inglés para mejor
+compatibilidad con los LLMs, pero nuestra conversación puede
 seguir en español. ¿Te parece bien?"
 ```
 

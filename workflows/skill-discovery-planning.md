@@ -9,11 +9,13 @@ Phases 1-2 of skill creation: Define purpose, scope, and structure.
 ### Step 1.1: Define the Problem
 
 **Ask yourself:**
+
 - What specific problem does this skill solve?
 - Who will use this skill (humans, agents, both)?
 - What platforms should it work on (OpenCode, Claude, Cursor, all)?
 
 **Example:**
+
 ```
 Problem: Developers spend too much time writing API documentation
 User: AI agents helping developers
@@ -23,11 +25,13 @@ Platform: OpenCode + Claude (Agent Skills standard)
 ### Step 1.2: Determine Skill Scope
 
 **Questions:**
+
 - What should the skill DO?
 - What should the skill NOT do (boundaries)?
 - What knowledge/resources does it need?
 
 **Example:**
+
 ```
 SHOULD DO:
 - Generate API documentation from code
@@ -47,12 +51,14 @@ SHOULD NOT DO:
 Choose a **descriptive, kebab-case** name:
 
 ✅ **Good Names:**
+
 - `api-documenter` (verb + object)
 - `security-audit` (noun + noun)
 - `code-reviewer` (noun + noun)
 - `database-migration` (noun + noun)
 
 ❌ **Bad Names:**
+
 - `helper`, `utils`, `tool` (too vague)
 - `my-skill`, `skill-1` (not descriptive)
 - `ApiDocumenter` (wrong case)
@@ -67,13 +73,14 @@ Choose a **descriptive, kebab-case** name:
 
 Determine what structure you need:
 
-| Level | Structure | When to Use |
-|-------|-----------|-------------|
-| **Minimal** | Just `SKILL.md` | Simple, focused task (< 300 lines) |
-| **Standard** | `SKILL.md` + `references/` | Multiple concepts, needs organization |
-| **Complex** | Full structure | Multiple workflows, templates, examples |
+| Level        | Structure                  | When to Use                             |
+| ------------ | -------------------------- | --------------------------------------- |
+| **Minimal**  | Just `SKILL.md`            | Simple, focused task (< 300 lines)      |
+| **Standard** | `SKILL.md` + `references/` | Multiple concepts, needs organization   |
+| **Complex**  | Full structure             | Multiple workflows, templates, examples |
 
 **Full Structure:**
+
 ```
 skill-name/
 ├── SKILL.md                 # Entry point (< 500 lines)
@@ -97,7 +104,7 @@ skill-name/
     └── example-1.md
 ```
 
-**Your choice:** [ ] Minimal  [ ] Standard  [ ] Complex
+**Your choice:** [ ] Minimal [ ] Standard [ ] Complex
 
 ### Step 2.2: Identify Required Components
 
@@ -114,6 +121,7 @@ skill-name/
 ### Step 2.3: Plan Your SKILL.md Structure
 
 **Standard sections:**
+
 ```markdown
 # Skill Name
 
@@ -165,4 +173,4 @@ Before moving to Phase 3, verify:
 
 ---
 
-*Back to [create-new-skill.md](create-new-skill.md) for overview*
+_Back to [create-new-skill.md](create-new-skill.md) for overview_
